@@ -50,7 +50,7 @@ class Post extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * @return $this|\Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
+     * @return \Magento\Framework\Controller\Result\Json
      */
     public function execute()
     {
