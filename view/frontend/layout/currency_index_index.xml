@@ -1,0 +1,11 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="1column">
+    <head>
+        <link src="PPF_CurrencyConverter::js/converter.js"/>
+        <css src="PPF_CurrencyConverter::css/converter.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="PPF\CurrencyConverter\Block\Form" name="currency_form" template="form.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,31 @@
+<div class="converter">
+    <h1><?php echo $this->getHeaderText(); ?></h1>
+
+    <form id="convertForm" action="<?php /* @escapeNotVerified */
+    echo $this->getSubmitUrl() ?>" method="post" data-hasrequired="* Required Fields" data-mage-init='{"validation":{}}'>
+        <fieldset class="fieldset">
+
+            <input type="hidden" name="currency" id="currency" value="RUB"/>
+            <label for="amount">
+                <?php echo __('RUB'); ?>
+            </label>
+            <input id="amount" type="number" data-validate='{"required":true}'/>
+
+            <div class="user-information">
+                <div id="result">
+                </div>
+                <div id="message">
+                </div>
+            </div>
+
+        </fieldset>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button id="convertButton" type="submit" title=" <?php echo __('Convert to PLN'); ?>" class="action submit primary">
+                    <span>  <?php echo __('Convert to PLN'); ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

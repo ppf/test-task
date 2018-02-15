@@ -1,0 +1,30 @@
+.converter {
+    width: 200px;
+    background: #f7eded;
+    padding: 20px;
+    border: 1px solid #d6cece;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 17px;
+    font-size: 16px;
+}
+
+#message {
+    font-weight: bold;
+    margin-top: 10px;
+    color: red;
+}
+
+.converter fieldset {
+    margin-bottom: 10px;
+}
+
+#amount {
+    width: 70%;
+}
+
+label[for=amount] {
+    margin-right: 10px;
+}
