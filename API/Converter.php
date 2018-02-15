@@ -53,11 +53,8 @@ class Converter
         $from = urlencode($fromCurrency);
         $to = urlencode($toCurrency);
 
-        // check allowed currencies (it will be helpful when converter will have more currencies)
-        $allowedCurrencies = $this->scopeConfig->getValue('currency_converter/general/allowed_currency', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-
-        if ($allowedCurrencies && !in_array($from, explode(',', $allowedCurrencies))) {
-            throw new \Exception('From currency not allowed.');
+        if (!$amount > 0) {
+            throw new \Exception('Amount has to be greater than 0.');
         }
 
         if (!$from) {
@@ -66,6 +63,13 @@ class Converter
 
         if (!$to) {
             throw new \Exception('Result currency not set.');
+        }
+
+        // check allowed currencies (it will be helpful when converter will have more currencies)
+        $allowedCurrencies = $this->scopeConfig->getValue('currency_converter/general/allowed_currency', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+
+        if ($allowedCurrencies && !in_array($from, explode(',', $allowedCurrencies))) {
+            throw new \Exception('From currency not allowed.');
         }
 
         // get API url
